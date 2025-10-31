@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&M Plex - Gaming as a Catalyst for Positive Change</title>
-    <meta name="description" content="M&M Plex envisions a transformative gaming ecosystem that fosters personal growth, community building, and positive social change through adaptive, culturally resonant experiences.">
+    <title>M&M Plex - Neon Gaming Paradise</title>
+    <meta name="description" content="M&M Plex - Transformative gaming ecosystem with neon aesthetics, personal growth, and positive social change. Welcome to the neon gaming paradise.">
     <style>
         * {
             margin: 0;
@@ -13,11 +13,63 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            background: #000;
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Neon Animations */
+        @keyframes neonPulse {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 10px #ff00ff,
+                    0 0 20px #ff00ff,
+                    0 0 30px #ff00ff,
+                    0 0 40px #ff00ff;
+            }
+            50% { 
+                text-shadow: 
+                    0 0 20px #ff00ff,
+                    0 0 30px #ff00ff,
+                    0 0 40px #ff00ff,
+                    0 0 50px #ff00ff;
+            }
+        }
+        
+        @keyframes neonGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 5px #00ffff,
+                    0 0 10px #00ffff,
+                    0 0 15px #00ffff,
+                    inset 0 0 5px #00ffff;
+            }
+            50% { 
+                box-shadow: 
+                    0 0 10px #00ffff,
+                    0 0 20px #00ffff,
+                    0 0 30px #00ffff,
+                    inset 0 0 10px #00ffff;
+            }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
         .container {
@@ -26,50 +78,142 @@
             padding: 0 20px;
         }
         
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #000428, #004e92);
+            overflow: hidden;
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 0, 255, 0.03) 10px,
+                rgba(255, 0, 255, 0.03) 20px
+            );
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: #00ffff;
+            border-radius: 50%;
+            animation: float 4s ease-in-out infinite;
+        }
+        
         header {
-            padding: 2rem 0;
+            padding: 3rem 0;
             text-align: center;
-            color: white;
+            position: relative;
+            animation: slideIn 1s ease-out;
         }
         
         .logo {
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 4rem;
+            font-weight: 900;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: neonPulse 2s ease-in-out infinite;
+            letter-spacing: 2px;
         }
         
         .tagline {
-            font-size: 1.3rem;
-            opacity: 0.95;
+            font-size: 1.5rem;
+            color: #00ffff;
             margin-bottom: 2rem;
+            text-shadow: 0 0 10px #00ffff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         .hero {
             padding: 4rem 2rem;
             text-align: center;
-            color: white;
+            position: relative;
+            animation: slideIn 1.2s ease-out;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #ff00ff, #ffff00, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: neonPulse 1.5s ease-in-out infinite;
+            letter-spacing: 2px;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto 2rem;
-            opacity: 0.95;
+            color: #fff;
+            text-shadow: 0 0 5px #fff;
+            line-height: 1.8;
+        }
+        
+        .neon-badge {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: neonGlow 3s ease-in-out infinite;
+            font-weight: 600;
         }
         
         .vision-section {
-            background: white;
+            background: rgba(0, 0, 0, 0.8);
             padding: 4rem 0;
             margin: 2rem 0;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #ff00ff;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 1.4s ease-out;
+        }
+        
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+            animation: slideIn 2s ease-in-out infinite;
         }
         
         .vision-grid {
@@ -80,29 +224,40 @@
         }
         
         .vision-card {
-            background: #f8f9fa;
+            background: rgba(255, 0, 255, 0.1);
+            border: 2px solid #ff00ff;
             padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: neonGlow 4s ease-in-out infinite;
         }
         
         .vision-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.05);
+            border-color: #00ffff;
+            box-shadow: 
+                0 0 20px #00ffff,
+                0 0 40px #00ffff;
         }
         
         .vision-card h3 {
-            color: #667eea;
+            color: #ff00ff;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            text-shadow: 0 0 10px #ff00ff;
+            letter-spacing: 1px;
         }
         
         .pillars-section {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.9);
             padding: 4rem 0;
             margin: 2rem 0;
             color: white;
-            backdrop-filter: blur(10px);
+            border: 2px solid #00ffff;
+            border-radius: 20px;
+            position: relative;
+            animation: slideIn 1.6s ease-out;
         }
         
         .pillars-grid {
@@ -113,59 +268,125 @@
         }
         
         .pillar {
-            background: rgba(255,255,255,0.15);
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
             padding: 1.5rem;
             border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            animation: neonGlow 5s ease-in-out infinite;
+        }
+        
+        .pillar:hover {
+            transform: translateY(-5px);
+            border-color: #ff00ff;
+            box-shadow: 
+                0 0 15px #ff00ff,
+                0 0 30px #ff00ff;
         }
         
         .pillar h4 {
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
         }
         
         .cta-section {
-            background: white;
+            background: rgba(0, 0, 0, 0.95);
             padding: 4rem 2rem;
             margin: 2rem 0;
-            border-radius: 15px;
+            border: 2px solid #ffff00;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            animation: slideIn 1.8s ease-out;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: #000;
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             margin: 1rem 0.5rem;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
         }
         
         .cta-button:hover {
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 
+                0 0 20px #ffff00,
+                0 0 40px #ffff00;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         .contact {
-            color: #666;
+            color: #00ffff;
             margin-top: 2rem;
+            text-shadow: 0 0 5px #00ffff;
         }
         
-        .status-badge {
-            background: #28a745;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: neonPulse 2.5s ease-in-out infinite;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .roadmap {
+            background: rgba(255, 0, 255, 0.05);
+            border: 1px solid #ff00ff;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            animation: neonGlow 6s ease-in-out infinite;
+        }
+        
+        .phase {
             margin: 1rem 0;
-            display: inline-block;
+            padding: 1rem;
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid #00ffff;
+            border-radius: 5px;
+        }
+        
+        .phase strong {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
         }
         
         @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -173,45 +394,71 @@
             .vision-grid, .pillars-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
         }
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+    
+    <div class="particles" id="particles"></div>
+    
     <div class="container">
         <header>
-            <div class="logo">M&M Plex</div>
-            <div class="tagline">Gaming as a Catalyst for Positive Change</div>
+            <div class="logo">M&M PLEX</div>
+            <div class="tagline">Enter the Neon Gaming Paradise</div>
         </header>
         
         <section class="hero">
-            <h1>Transforming Gaming into Personal Growth</h1>
-            <p>We envision a transformative ecosystem where gaming transcends mere entertainment and becomes a catalyst for personal growth, community building, and positive social change.</p>
-            <div class="status-badge">Development Framework Available</div>
+            <h1>Transform Your Reality</h1>
+            <p>Welcome to the ultimate neon gaming ecosystem where every pixel glows with possibility and every game transforms your mind into a digital paradise of infinite growth and connection.</p>
+            <div class="neon-badge">⚡ Level Up Your Reality ⚡</div>
         </section>
         
         <section class="vision-section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 2rem; color: #667eea;">Our Vision</h2>
+                <h2 class="section-title">Neon Vision</h2>
                 <div class="vision-grid">
                     <div class="vision-card">
-                        <h3>🧠 Personal Transformation</h3>
-                        <p>Every user embarks on a journey of self-discovery facilitated by adaptive game mechanics rooted in psychological research.</p>
+                        <h3>🧠 Mind Revolution</h3>
+                        <p>Unlock your consciousness through neural pathways illuminated by adaptive game mechanics that fuse psychology with pure digital ecstasy.</p>
                     </div>
                     <div class="vision-card">
-                        <h3>🌍 Social Synergy</h3>
-                        <p>Virtual competition and collaboration act as safe outlets for energy, reducing real-world conflicts and promoting social cohesion.</p>
+                        <h3>🌍 Cyber Unity</h3>
+                        <p>Connect across the digital matrix in neon-lit tournaments where competition becomes collaboration and isolation transforms into global citizenship.</p>
                     </div>
                     <div class="vision-card">
-                        <h3>🎮 Lifelong Engagement</h3>
-                        <p>Games balance challenge, achievement, and social engagement to foster mental wellness and community spirit.</p>
+                        <h3>🎮 Eternal Gameplay</h3>
+                        <p>Experience infinite engagement where challenge meets achievement in perfect balance, creating a flow state that transcends ordinary gaming.</p>
                     </div>
                     <div class="vision-card">
-                        <h3>🌐 Cultural Authenticity</h3>
-                        <p>Deep localization ensures global appeal with respect for diversity and cultural nuances.</p>
+                        <h3>🌐 Cultural Neon</h3>
+                        <p>Journey through globally illuminated experiences where every culture shines in vibrant neon hues, creating a tapestry of digital diversity.</p>
                     </div>
                     <div class="vision-card">
-                        <h3>✨ Immersive Technology</h3>
-                        <p>Sensory marketing and immersive technologies engage multiple human senses for richer experiences.</p>
+                        <h3>✨ Sensory Overload</h3>
+                        <p>Immerse in multi-sensory experiences where sight, sound, and sensation merge into an electrifying symphony of digital delight.</p>
                     </div>
                 </div>
             </div>
@@ -219,65 +466,133 @@
         
         <section class="pillars-section">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 1rem;">Strategic Pillars</h2>
+                <h2 class="section-title">Neon Pillars</h2>
                 <div class="pillars-grid">
                     <div class="pillar">
-                        <h4>🧠 Personal Transformation</h4>
-                        <p>Psychological frameworks for growth in secure environments</p>
+                        <h4>🧠 Digital Awakening</h4>
+                        <p>Psychological frameworks lighting the path to transformation</p>
                     </div>
                     <div class="pillar">
-                        <h4>🤝 Social Impact</h4>
-                        <p>Global tournaments fostering community and global citizenship</p>
+                        <h4>🤝 Quantum Connection</h4>
+                        <p>Global tournaments building cyber-communities of light</p>
                     </div>
                     <div class="pillar">
-                        <h4>🚀 Tech Excellence</h4>
-                        <p>Unity-powered cross-platform accessibility and scalability</p>
+                        <h4>🚀 Tech Illumination</h4>
+                        <p>Unity-powered interfaces blazing across dimensional barriers</p>
                     </div>
                     <div class="pillar">
-                        <h4>🎨 Cultural Localization</h4>
-                        <p>Authentic experiences resonating across world regions</p>
+                        <h4>🎨 Neon Localization</h4>
+                        <p>Cultural experiences glowing with authentic resonance</p>
                     </div>
                     <div class="pillar">
-                        <h4>💚 Sustainable Monetization</h4>
-                        <p>Player-centric revenue models for long-term value</p>
+                        <h4>💚 Crystal Economy</h4>
+                        <p>Sustainable monetization shining with player value</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <section class="cta-section">
-            <h2>Join Our Journey</h2>
-            <p>We're building the future of meaningful gaming. Our comprehensive development framework is ready, and we're seeking partners to bring this vision to life.</p>
+            <h2 class="section-title">Join the Neon Revolution</h2>
+            <p>Step into the glowing future where gaming becomes enlightenment. Our illuminated development framework is ready to transform the digital landscape.</p>
             
-            <div style="margin: 2rem 0;">
-                <h3>Development Roadmap</h3>
-                <p><strong>Phase 1 (30 days):</strong> Foundation & Research</p>
-                <p><strong>Phase 2 (60-90 days):</strong> Prototype Development</p>
-                <p><strong>Phase 3 (6 months+):</strong> Global Scaling</p>
+            <div class="roadmap">
+                <h3 style="color: #ffff00; text-shadow: 0 0 10px #ffff00; margin-bottom: 1rem;">Illuminated Roadmap</h3>
+                <div class="phase">
+                    <strong>Phase 1 (30 days):</strong> Neon Foundation & Mind Research
+                </div>
+                <div class="phase">
+                    <strong>Phase 2 (60-90 days):</strong> Prototype Illumination
+                </div>
+                <div class="phase">
+                    <strong>Phase 3 (6 months+):</strong> Global Neon Ascension
+                </div>
             </div>
             
             <div>
-                <a href="https://github.com/simbiot-ai/onemore-files/blob/main/-4926357474/2025-10-31/mmplex-framework.md" class="cta-button" target="_blank">📋 View Development Framework</a>
-                <a href="mailto:contact@mmplex.com" class="cta-button">📧 Contact Us</a>
+                <a href="https://github.com/simbiot-ai/onemore-files/blob/main/-4926357474/2025-10-31/mmplex-framework.md" class="cta-button" target="_blank">⚡ Access Neon Framework</a>
+                <a href="mailto:contact@mmplex.com" class="cta-button">📧 Contact Matrix</a>
             </div>
             
             <div class="contact">
                 <p>📧 contact@mmplex.com</p>
                 <p>🌐 onemore.cil.by</p>
-                <p><small>Last updated: October 31, 2025</small></p>
+                <p style="color: #ff00ff; text-shadow: 0 0 5px #ff00ff; margin-top: 1rem;">
+                    <small>Last illuminated: October 31, 2025</small>
+                </p>
             </div>
         </section>
     </div>
     
     <script>
+        // Create animated particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random size
+            const size = Math.random() * 4 + 1;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            // Random position
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            
+            // Random animation delay
+            particle.style.animationDelay = Math.random() * 4 + 's';
+            
+            // Random opacity
+            particle.style.opacity = Math.random() * 0.5 + 0.2;
+            
+            particlesContainer.appendChild(particle);
+        }
+        
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+        
+        // Add interactive glow effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255, 0, 255, 0.1) 0%, transparent 50%), linear-gradient(45deg, #000428, #004e92)`;
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
         });
     </script>
 </body>
